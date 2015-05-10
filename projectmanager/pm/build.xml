@@ -1,0 +1,20 @@
+<project name="native2ascii" default="all" basedir=".">
+
+	<target name="all" depends="clean, merge, native2ascii" />
+
+	<target name="native2ascii">
+		<native2ascii encoding="GBK" src="." dest="./WEB-INF/classes/resources" includes="application.properties" />
+	</target>
+
+	<target name="clean">
+		<delete file="./application.properties" />
+		<delete file="./WEB-INF/classes/resources/application.properties" />
+	</target>
+
+	<target name="merge">
+		<concat destfile="application.properties">
+			<fileset dir="." includes="application*.properties" />
+		</concat>
+	</target>
+	
+</project>

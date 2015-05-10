@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:59:04 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="Risks" table="risks">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="riskDescription" column="risk_description" type="java.lang.String" />
+        <property name="riskLevel" column="risk_level" type="java.lang.String" />
+        <property name="probability" column="probability" type="java.lang.String" />
+        <property name="submitById" column="submit_by_id" type="java.lang.Long" />
+        <property name="submitDate" column="submit_date" type="java.util.Date" />
+        <property name="influence" column="influence" type="java.lang.String" />
+        <property name="keepAwayMeasure" column="keep_away_measure" type="java.lang.String" />
+        <property name="status" column="status" type="java.lang.String" />
+ 
+        <property name="projectId" column="project_id" type="java.lang.Long" />
+    </class>
+    
+</hibernate-mapping>

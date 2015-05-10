@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:59:44 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="WeekReports" table="week_reports">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="submitDate" column="submit_date" type="java.util.Date" />
+        <property name="startDateFact" column="start_date_fact" type="java.util.Date" />
+        <property name="endDateFact" column="end_date_fact" type="java.util.Date" />
+        <property name="workloadThisweek" column="workload_thisweek" type="java.lang.Integer" />
+        <property name="excuteStatus" column="excute_status" type="java.lang.String" />
+        <property name="problem" column="problem" type="java.lang.String" />
+        
+        <property name="submitById" column="submit_by_id" type="java.lang.Long" />
+ 
+        <property name="targetId" column="target_id" type="java.lang.Long" />
+        
+        <property name="weekId" column="week_id" type="java.lang.Long" />
+
+    </class>
+    
+</hibernate-mapping>

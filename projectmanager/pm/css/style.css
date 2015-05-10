@@ -1,0 +1,1088 @@
+/*
+	ocean style sheet
+
+
+
+
+*/
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+a
+{
+	color: #3169B5; 
+	text-decoration: none; 
+}
+a:hover
+{
+	text-decoration: underline; 
+}
+a:visited
+{
+	color: Gray; 
+}
+
+body
+{
+	font-family: arial,sans-serif;
+	font-size: 80%;
+	line-height: 1.5em;
+	margin: 0 0 12px 0;
+	color: #333333;
+}
+
+input,
+button
+{
+	font-family: arial, sans-serif;
+	font-size: 9pt; 
+}
+
+#hideDashboard
+{
+	text-align: right;
+	padding-right: 10px;
+}
+
+#searchBar
+{
+	background-color: #97b9e4;
+	margin-top: 70px;
+	margin-bottom: 0px;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-top: solid 3px #E5EEF9;
+	border-bottom: solid 3px #E5EEF9;
+}
+
+.searchCheckboxes 
+{
+	margin-top:5px;
+	margin-left:7px;
+	color:White;
+}
+
+#searchEdit
+{
+	margin-top: 0px;
+	padding: 2px 2px 2px 2px;
+	width: 380px;
+	font-size:10pt;
+}
+
+#searchButton
+{
+	border: solid 1px #3169B5;
+	background-color: #E5EEF9;
+	color: #3169B5;
+	font-weight: bold;
+	margin-left: 2px;
+	padding-top: 1px;
+	cursor: pointer;	
+	cursor: hand;
+	font-size:10pt;
+}
+
+#footer
+{
+	font-size: 75%;
+	margin-left: 20px;
+	margin-top: 50px;
+}
+
+.feedbackLink
+{
+}
+
+.sheet
+{
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.pageContainer
+{
+	padding-bottom: 1px;    /* needed for ff */
+}
+
+.page
+{
+	display: none;
+}
+
+.pageActive
+{
+	display: block;
+}
+
+.column
+{
+    float: left;
+}
+
+.columnClear
+{
+	clear: both;
+}
+
+.module
+{
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+.moduleTitleBar
+{
+	padding-left: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	cursor: move;
+	overflow: hidden;
+	height: 1.5em;
+	line-height: 1.5em;
+	background-color: #f1f8ff; 
+}
+
+.moduleIcon
+{
+	vertical-align: middle;
+}
+
+.moduleIcon IMG
+{
+	margin-right: 4px;	
+}
+
+.moduleTitle
+{
+	color: #0066cc;
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	padding-left: 3px;
+}
+
+.moduleBody
+{
+	padding-top: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+}
+
+.moduleOCBtn
+{
+	cursor: pointer;
+	margin-left: 2px; 
+	margin-top: 5px;
+	margin-right: 2px;
+	float: left;
+	width: 9px;
+	height: 10px;
+}
+
+.moduleOCBtnExpanded
+{
+	background: url(./images/closed_gray_lg.gif) no-repeat 0 0;
+}
+
+.moduleOCBtnCollapsed
+{
+	background: url(../images/opened_gray_lg.gif) no-repeat 0 0;
+}
+
+.moduleKillBtn
+{
+	cursor: pointer;
+	margin-top: 7px;
+	margin-right: 2px;
+	width: 9px;
+	height: 9px;
+	float: right;
+	background: url(../images/BtnKill.gif) no-repeat 0 0;
+}
+
+.moduleAboutBox 
+{
+	position: absolute;
+	border: solid 1px black;
+	margin: 2px;
+	background: white;
+	width: 250px;
+	overflow: hidden;
+	z-index: 100;
+}
+
+.moduleAboutImage
+{
+}
+
+.moduleAboutItem
+{
+	width: 100%;
+}
+
+.moduleAboutBtn
+{
+	cursor: pointer;
+	margin-top: 0px;
+	width: 15px;
+	height: 10px;
+	float: right;	
+	text-align: center;
+	color: Gray;	
+}
+
+.rssList
+{
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.rssItem
+{
+}
+
+.descriptionContent
+{
+
+/*	TODO: this seems too small on the eyes...
+    font-size: 10px;
+    line-height: 1.8em;
+*/
+    color: #333333;
+}
+
+.addPageText
+{
+	width: 500px;
+}
+
+#addPageByNameForm, #addPageByOpmlForm, #addModuleForm, .cByUrlForm, .addFeedByUrlForm, .addFeedByOPMLForm, .createFolderForm
+{
+	margin-top: 10px;
+}
+
+.addFeedBySearchForm
+{
+	margin-top: 0px;
+}
+
+.addModuleContainer
+{
+	margin-left: 5px;
+	float: left;
+}
+
+#addPageByNameEdit, #opmlFile, #addModuleEdit, .addFeedByUrlEdit, .addFeedByOPMLEdit, .addContentSearchEdit
+{
+	border: solid 1px #7695B2;
+	padding-left:2px; 
+	padding-top:1px;
+}
+
+.createFolderEdit
+{
+	border: solid 1px #7695B2;
+	padding-left:2px; 
+	padding-top:1px;
+	margin-left: 1px;
+}
+
+#addPageByNameButton, #addPageByOpmlButton, #addModuleButton
+{
+	border: solid 1px #7695B2;
+	margin-left: 4px;
+	cursor: pointer;
+	color: White;
+	font-weight: bold;
+	background-color: #A3BBD3;
+	height: 1.6em; 
+}
+
+.addFeedByUrlButton, .addFeedByOPMLButton, .addContentSearchButton 
+{
+	border: solid 1px #7695B2;
+	margin-left: 2px;
+	cursor: pointer;
+	color: White;
+	font-weight: bold;
+	background-color: #A3BBD3;
+	height: 1.6em; 
+}
+
+.createFolderButton
+{
+	border: solid 1px #7695B2;
+	margin-left: 1px;
+	cursor: pointer;
+	color: White;
+	font-weight: bold;
+	background-color: #A3BBD3;
+	height: 1.6em; 
+}
+
+.cancelCreateFolderButton
+{
+	border: none;
+	margin-left: 5px;
+	cursor: pointer;
+	text-decoration: underline;
+	background-color: White;
+	margin-left: 10px;
+	height: 1.6em; 
+}
+
+.deletePageButton
+{
+	text-decoration: underline;
+	color: White;
+	cursor: pointer;
+	font-weight: bold;
+	display: inline;
+	float: right;
+	margin-right: 15px;
+	margin-top: -5px;
+	height:1.6em; 
+}
+
+.showhideDashboard
+{
+	text-decoration: underline;
+	cursor: pointer;
+	width: 100px;
+}
+
+.languageBtn
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.languageSelector
+{
+	margin-left: 20px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.toolbar
+{
+	top: 15px;
+	right: 30px;
+	position: absolute;
+	text-align: right;	
+}
+
+.sidebar
+{
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	border: solid 1px white;
+	width: 200px;
+	background-color: #ffffff;
+}
+
+.sidebarTitleBar
+{
+	padding-top: 12px;
+	padding-left: 5px;
+	height: 45px;
+	cursor: pointer;
+}
+
+.sidebarTitleBarBorderExpanded
+{
+	border-top: solid 1px #97b9e4;
+	border-left: solid 1px #97b9e4;
+	border-right: solid 1px #97b9e4;
+	border-bottom: solid 1px White;
+}
+
+.sidebarTitleBarBorderCollapsed
+{
+	border: solid 1px #97b9e4;
+}
+
+.sidebarTitleBarNoBorder
+{
+	border: solid 1px White;
+}
+
+.fixedLogoPos
+{
+	position: absolute; 
+	top: 11px; 
+	left: 21px;
+}
+
+.sidebarLogo
+{
+	background: url(./images/logo.gif) no-repeat 0 0;
+	width: 71px;
+	height: 27px;
+	position: absolute;
+	top: 10px;
+	left: 6px;
+}
+
+.sidebarKillBtn
+{
+	position: absolute;
+	top: 11px;
+	left: 180px;
+	cursor: pointer;
+	width: 9px;
+	height: 9px;
+	background: url(../images/BtnKill.gif) no-repeat 0 0;
+}
+
+.sidebarPinBtn
+{
+	position: absolute;
+	top: 5px;
+	text-align: right; 
+	width:95%; 
+	cursor: pointer;
+	color: #97b9e4;
+	text-decoration: underline;
+}
+
+.sidebarPreview
+{
+	position: absolute;
+	font-size: 75%;
+	top: 33px;
+	left: 50px;
+	color: #97b9e4;
+}
+
+.sidebarShowHideBtn
+{
+	margin-top: 21px;
+	margin-right: 3px;
+	float: right;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+}
+
+.sidebarOCBtnExpanded
+{
+}
+
+.sidebarOCBtnCollapsed
+{
+}
+
+.sidebarBody
+{
+	border-left: solid 1px #97b9e4;
+	border-right: solid 1px #97b9e4;
+	border-bottom: solid 1px #97b9e4;
+	margin-top: -1px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+}
+
+.sidebarSep1
+{
+	text-align: center;
+	border-top: solid 1px #97b9e4;
+	clear: left;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.sidebarSepIEOnly
+{
+	/* hack for IE to show separator */
+	height: 1px;
+}
+
+.sidebarSep2
+{
+	text-align: center;
+	border-top: solid 1px #97b9e4;
+	clear: left;
+	margin-left: 10px;
+	margin-right: 5px;
+	margin-top: 8px;
+}
+
+.topFeedsSpacer
+{
+	margin-top: -12px;
+}
+
+.sidebarAddContent
+{
+	margin-left: 5px;
+	color: White;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+.group
+{
+	padding-left: 5px;
+	margin-top: -3px;
+}
+
+.groupTitleBar
+{
+}
+
+.groupTitle
+{
+	cursor: pointer;
+	display: inline;
+	padding-left: 2px;
+}
+
+.groupOCBtn
+{
+	cursor: pointer;
+	margin-top: 6px;
+	float: left;
+	width: 8px;
+	height: 8px;
+	clear: left;
+}
+
+.groupOCBtnExpanded
+{
+	background: url(./images/closed_gray.gif) no-repeat 0 0;
+}
+
+.groupOCBtnCollapsed
+{
+	background: url(./images/opened_gray.gif) no-repeat 0 0;
+}
+
+.groupBody
+{
+	margin-top: -2px;
+	margin-bottom: 2px;
+	clear: left;
+	background-color: White;
+	padding-left: 13px;
+}
+
+.folderMenu
+{
+	padding-left: 5px;
+	margin-top: -3px;
+}
+
+.folderMenuTitleBar
+{
+	color: #333333;
+	height: 1.5em;
+	overflow: hidden;
+}
+
+.folderMenuTitle
+{
+	cursor: pointer;
+	display: inline;
+	padding-left: 4px;
+}
+
+.folderMenuBtn
+{
+	cursor: pointer;
+	margin-top: 6px;
+	float: left;
+	width: 8px;
+	height: 8px;
+	clear: left;
+}
+
+.folderMenuBtnOpen
+{
+	background: url(./images/opened_gray.gif) no-repeat 0 0;
+}
+
+.folderMenuBtnClosed
+{
+	background: url(./images/closed_gray.gif) no-repeat 0 0;
+}
+
+.folderMenuBody
+{
+	background-color: White;
+	padding-left: 14px;
+	margin-bottom: 2px;
+}
+
+.folderItem
+{
+	height: 1.5em;
+	overflow: hidden;
+	clear: left;
+}
+
+.folderItemTitle
+{
+	cursor: pointer;
+	text-decoration: underline;
+	display: inline;
+	padding-left: 1px;
+	color: #333333;
+}
+
+.folderItemIcon
+{
+    float: left;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+}
+
+.folderItemIcon.ItemDefault
+{
+	background: url(./images/FolderItem.gif) no-repeat center center;	
+}
+
+.folderItemIcon IMG
+{
+	cursor: pointer;
+}
+
+.shadowedBox
+{
+	position: absolute;
+	margin-left: -16px;
+	margin-top: -2px;
+	z-index: 1000;
+}
+
+.shadowedBox .drop.a { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-a.png', sizingMethod='scale'); width: 22px; height: 22px; }
+.shadowedBox .drop.b { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-b.png', sizingMethod='scale'); width: 37px; height: 22px; }
+.shadowedBox .drop.c { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-c.png', sizingMethod='scale'); height: 22px; }
+.shadowedBox .drop.d { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-d.png', sizingMethod='scale'); width: 27px; height: 22px; }
+.shadowedBox .drop.e { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-e.png', sizingMethod='scale'); width: 32px; height: 22px; }
+
+.shadowedBox .drop.f { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-f.png', sizingMethod='scale'); width: 32px; height: 37px; }
+.shadowedBox .drop.g { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-g.png', sizingMethod='scale'); width: 32px; height: auto; }
+.shadowedBox .drop.h { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-h.png', sizingMethod='scale'); width: 32px; height: 27px; }
+
+.shadowedBox .drop.i { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-i.png', sizingMethod='scale'); width: 32px; height: 32px; }
+.shadowedBox .drop.j { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-j.png', sizingMethod='scale'); width: 27px; height: 32px; }
+.shadowedBox .drop.k { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-k.png', sizingMethod='scale'); height: 32px }
+.shadowedBox .drop.l { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-l.png', sizingMethod='scale'); width: 37px; height: 32px; }
+.shadowedBox .drop.m { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-m.png', sizingMethod='scale'); width: 22px; height: 32px; }
+
+.shadowedBox .drop.n { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-n.png', sizingMethod='scale'); width: 22px; height: 27px; }
+.shadowedBox .drop.o { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-o.png', sizingMethod='scale'); width: 22px; height: auto; }
+.shadowedBox .drop.p { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/drop-p.png', sizingMethod='scale'); width: 22px; height: 37px; }
+
+.ckWidth { width: 787px; }
+
+.rssReader
+{
+	border: solid 2px #555555;
+	background-color: White;
+}
+
+.rssReaderTitleBar
+{
+    clear: both;
+	padding-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	padding-right: 10px;
+	background-color: #f1f8ff;
+}
+
+.rssReaderTitle
+{
+	color: #0066cc;
+	font-size:110%;
+	font-weight:bold;
+}
+
+.rssReaderCloseText
+{
+	float: right;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.rssReaderPinText
+{
+	float: right;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.rssReaderInactivePinText
+{
+	float: right;
+	margin-right: 20px;
+	color: Gray;
+}
+.rssReaderBody
+{
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+}
+
+.rssHeadlineContainer
+{
+    clear: both;
+}
+
+.rssHeadlineTitleBar
+{
+}
+
+.rssHeadlineTitle
+{
+	cursor: pointer;
+	color: #3169B5;
+	display: inline;
+}
+
+.rssHeadlineDescription
+{
+    margin-left: 16px;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.rssImages 
+{
+	padding: 10px;
+}
+
+.rssImage
+{
+	border: solid 1px gray;
+	margin: 10px;
+}
+
+.newsbotSource, .newsbotAge, .rssLink
+{
+	padding-left: 10px;
+	display: inline;
+	font-size: smaller;
+	color: gray;
+}
+
+.newsbotSource
+{
+	font-weight:bold;
+}
+
+.toolExpandCollapse
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.toolExpandCollapseInactive
+{
+	color: Gray;
+}
+
+.toolMoreLess
+{
+	color: #333333;
+	display: inline;
+	float: right;
+	padding-left: 8px;
+	margin-right: -2px;
+	cursor: pointer;
+	font-family: verdana;
+	font-size: 11pt;
+}
+
+.toolMoreLessInactive
+{
+	color: Gray;
+	cursor: default;
+}
+
+.reset
+{
+    margin-top: 20px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.hiringText
+{
+	color: Red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.previewText
+{
+	color: gray;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.homeLink
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.homeContainer
+{
+	padding-left: 10px;
+}
+
+.folderItemKillBtn
+{
+	cursor: pointer;
+	margin-top: 6px;
+	width: 15px;
+	height: 15px;
+	float: right;
+	background: url(./images/FolderItemKill.gif) no-repeat 0 0;
+}
+
+.createFolderText
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.addFeedText
+{
+	margin-top: -14px;
+	margin-left: 18px;
+	margin-bottom: 4px;
+	text-decoration: underline;
+	cursor: pointer;
+	color: #3169B5;
+}
+
+.searchMoreLink
+{
+	float: right;
+	margin-bottom: 10px;
+}
+
+.dragDiv
+{
+    background-color: White;
+}
+
+.columnControl
+{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.styleControl
+{
+	cursor: pointer;  
+	text-decoration: underline; 
+}
+
+#logoTag
+{
+	float:right;
+	margin-right:10px;
+	display:none;
+}
+
+.searchResults
+{
+}
+
+.searchResultsItemDashboard
+{
+	line-height: normal;
+	font-size: smaller;
+	margin-bottom: 10px;
+}
+
+.searchResultsItem
+{
+	margin-bottom: 15px;
+}
+
+.searchAds
+{
+	float: right;
+	width: 220px;
+	padding-left: 10px;
+	margin-left: 20px;
+	border-left: solid 1px #97b9e4;
+	line-height: 1.4em;
+}
+
+.searchTabContainer
+{
+}
+
+.searchTab
+{
+	border: solid 1px #97b9e4;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+.searchTabCombo
+{
+	border: none;
+}
+
+.searchTabActive
+{
+	background-color: #97b9e4; 
+	color: white; 
+	cursor: none;
+}
+
+.searchCountContainer
+{
+	float: right;
+	margin-right: 10px;
+}
+
+.searchCount
+{
+	display: none;
+}
+
+.searchCountActive
+{
+	display: block;
+}
+
+.searchPageContainer
+{
+	clear: both;
+}
+
+.searchPage
+{
+	display: none;
+}
+
+.searchPageActive
+{
+	display: block;
+}
+
+.searchAdDivider
+{
+	border-top: solid 1px #97b9e4;
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+
+.searchLink
+{
+	cursor: pointer;
+	text-decoration: underline;
+	color: #3169B5;
+}
+
+.searchNext
+{
+	cursor: pointer; 
+	text-decoration: underline; 
+}
+
+.searchPrev
+{
+	cursor: pointer; 
+	text-decoration: underline; 
+}
+
+.rssSubscribe
+{
+	cursor: pointer; 
+	text-decoration: underline; 
+	font-weight: bold;
+	color: #3169B5; 
+}
+
+.feedSource
+{
+	color: green; 
+}
+
+.footerlinks
+{
+	font-size:100%;
+	color: Gray; 
+	line-height: 1.7em;
+}
+
+.rssReaderToolbar
+{
+}
+
+.addContentText
+{
+	margin-top: 10px;
+}
+
+.MoreContentText
+{
+	cursor: pointer;
+	margin-top: 10px;
+	text-decoration: underline; 
+}
+
+/* mark as read stuff
+   the rules for :visited and .visited need to be the same 
+   NOTE: "gray" is hard-coded in RssModule.GetUnreadCount  */
+
+iframe#naviframe 
+{
+	display:none; 
+}
+
+a.rssHeadlineTitle:visited,
+a.rssHeadlineTitle.visited 
+{ 
+	color:gray; 
+}
+
+.Start_BindingManager_Custom 
+{
+	font-style: italic;
+	cursor: pointer;
+}
+
+.Start_BindingManager_Warning
+{
+	color:darkred;
+}
+.Start_BindingManager_Desc
+{
+	border:1px darkred solid;
+	margin:5px;
+	padding:5px;
+}

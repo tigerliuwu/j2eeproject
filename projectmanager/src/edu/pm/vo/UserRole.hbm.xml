@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:59:32 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="UserRole" table="user_role">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="isWorking" column="is_working" type="java.lang.String" />
+        
+        <property name="userId" column="user_id" type="java.lang.Long" />
+        
+        <property name="roleId" column="role_id" type="java.lang.Long" />
+        
+        <property name="projectId" column="project_id" type="java.lang.Long" />
+        
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:58:44 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="Products" table="products">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="productName" column="product_name" type="java.lang.String" />
+        <property name="productSizePlan" column="product_size_plan" type="java.lang.Integer" />
+        <property name="productSizeFact" column="product_size_fact" type="java.lang.Integer" />
+        <property name="productUnit" column="product_unit" type="java.lang.String" />
+        <property name="referDate" column="refer_date" type="java.util.Date" />
+        <property name="status" column="status" type="java.lang.String" />
+        <property name="auditDate" column="audit_date" type="java.util.Date" />
+        <property name="auditRemark" column="audit_remark" type="java.lang.String" />
+ 
+        <many-to-one name="targets" column="target_id" class="Targets" />
+ 
+        <property name="referById" column="refer_by_id" type="java.lang.Long" />
+ 
+        <property name="auditById" column="audit_by_id" type="java.lang.Long" />
+    </class>
+    
+</hibernate-mapping>

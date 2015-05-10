@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:59:10 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="RolePermission" table="role_permission">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+ 		<property name="roleId" column="role_id" type="java.lang.Long" />
+ 		
+ 		<property name="permissionId" column="permission_id" type="java.lang.Long" />
+ 		
+    </class>
+    
+</hibernate-mapping>

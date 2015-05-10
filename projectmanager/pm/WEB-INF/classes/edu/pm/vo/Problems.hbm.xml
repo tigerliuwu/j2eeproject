@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:58:35 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="Problems" table="problems">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="submitDate" column="submit_date" type="java.util.Date" />
+        <property name="problemLevel" column="problem_level" type="java.lang.String" />
+        <property name="problemDescription" column="problem_description" type="java.lang.String" />
+        <property name="correctMeasure" column="correct_measure" type="java.lang.String" />
+        <property name="status" column="status" type="java.lang.String" />
+        <property name="closeDate" column="close_date" type="java.util.Date" />
+ 
+        <property name="projectId" column="project_id" type="java.lang.Long"/>
+ 
+        <property name="submitById" column="submit_by_id" type="java.lang.Long"/>
+ 
+        <property name="solveById" column="solve_by_id" type="java.lang.Long"/>
+ 
+        <property name="validateById" column="validate_by_id" type="java.lang.Long"/>
+    </class>
+    
+</hibernate-mapping>

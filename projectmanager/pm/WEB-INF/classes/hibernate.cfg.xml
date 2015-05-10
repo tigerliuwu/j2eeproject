@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="connection.username">root</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/pm</property>
+        <property name="hibernate.connection.characterEncoding">GBK</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.password">123456</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+
+		<property name="c3p0.min_size">5</property>
+		<property name="c3p0.max_size">20</property>
+		<property name="c3p0.timeout">300</property>
+		<property name="c3p0.max_statements">50</property>
+		<property name="c3p0.idle_test_period">3000</property>
+		
+		<!-- Mapping files -->
+
+		<mapping resource="edu/pm/vo/test1.hbm.xml" />
+		
+        <mapping resource="edu/pm/vo/AcceptReports.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Problems.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Targets.hbm.xml"/>
+        <mapping resource="edu/pm/vo/WeekReports.hbm.xml"/>
+        <mapping resource="edu/pm/vo/ProjectReports.hbm.xml"/>
+        <mapping resource="edu/pm/vo/UserRole.hbm.xml"/>
+        <mapping resource="edu/pm/vo/RolePermission.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Permissions.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Users.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Example.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Products.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Projects.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Risks.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Payouts.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Roles.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Constants.hbm.xml"/>
+        <mapping resource="edu/pm/vo/Weeks.hbm.xml"/>
+
+	</session-factory>
+</hibernate-configuration>

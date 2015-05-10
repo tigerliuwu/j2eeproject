@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	
+	<form-beans>
+	
+		
+		<form-bean name="teamCreateForm" type="edu.pm.uc.background.form.TeamCreateForm" />
+		
+		<form-bean name="userForm" type="edu.pm.uc.background.form.UserForm" />
+		
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+		
+		
+		<!-- back login -->
+		
+		<action path="/background" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/background/mainFrame.jsp" />
+		</action>
+		<action path="/back_top" type="edu.pm.base.PMBaseForwardAction" parameter="success" scope="request">
+			<forward path="/WEB-INF/jsp/background/top.jsp" name="success" />
+		</action>
+		<action path="/back_loginPre" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/background/left0.jsp" name="success" />
+		</action>
+		<action path="/back_rt0" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/background/rt0.jsp" name="success" />
+		</action>
+		<action path="/back_rb00" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/background/rb00.jsp" />
+		</action>
+		<action path="/backLoginAction" parameter="success" type="edu.pm.uc.background.action.BackLoginAction"
+			 name="LoginForm" scope="request" validate="false" input="/back_loginPre.do">
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backTreeAction" parameter="success" type="edu.pm.uc.background.action.BackTreeAction"
+			 scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/background/left.jsp" />
+		</action>
+		<action path="/backHrefAction" parameter="success" type="edu.pm.uc.background.action.BackHrefAction"
+			 scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/background/rt.jsp" />
+		</action>
+		
+		<!-- project -->
+		
+		<action path="/backProjectCreatePreAction" parameter="permission=pass" 
+			type="edu.pm.base.PMBaseForwardAction"  scope="request" validate="false"   >
+			<forward name="success" path="/WEB-INF/jsp/background/project_create.jsp" />
+		</action>
+		<action path="/backProjectCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackProjectCreateAction"  
+			scope="request" validate="false" name="projectForm"
+			input="/backProjectCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backProjectModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackProjectModifyPreAction"  
+			scope="request" validate="false" name="projectForm">
+			<forward name="success" path="/WEB-INF/jsp/background/project_modify.jsp" />
+		</action>
+		<action path="/backProjectModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackProjectModifyAction"  
+			scope="request" validate="false" name="projectForm"
+			input="/backProjectModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backProjectDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackProjectDeleteAction"  
+			scope="request" validate="false">
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backProjectTeamPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackProjectTeamPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/background/team_list.jsp" />
+		</action>
+		<action path="/backModifyTeamUserPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackModifyTeamUserPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/background/team_modify.jsp" />
+		</action>
+		<action path="/backModifyTeamUserAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackModifyTeamUserAction"  
+			scope="request" validate="false" input="/backModifyTeamUserPreAction.do?reEntry=true" >
+			<forward name="success" path="/backProjectTeamPreAction.do" />
+		</action>
+		<action path="/backCreateTeamUserPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackCreateTeamUserPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/background/team_create.jsp" />
+		</action>
+		<action path="/backCreateTeamUserAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackCreateTeamUserAction"  name="teamCreateForm"
+			scope="request" validate="false" input="/backCreateTeamUserPreAction.do?reEntry=true" >
+			<forward name="success" path="/backProjectTeamPreAction.do" />
+		</action>
+		
+		<!-- back user -->
+		
+		<action path="/backUserCreatePreAction" parameter="permission=pass" 
+			type="edu.pm.base.PMBaseForwardAction"  scope="request" validate="false"   >
+			<forward name="success" path="/WEB-INF/jsp/background/user_create.jsp" />
+		</action>
+		<action path="/backUserCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackUserCreateAction"  
+			scope="request" validate="false" name="userForm"
+			input="/backProjectUserPreAction.do?reEntry=true" >
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backUserModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackUserModifyPreAction"  
+			scope="request" validate="false" name="userForm">
+			<forward name="success" path="/WEB-INF/jsp/background/user_modify.jsp" />
+		</action>
+		<action path="/backUserModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackUserModifyAction"  
+			scope="request" validate="false" name="userForm"
+			input="/backUserModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		<action path="/backUserDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackUserDeleteAction"  
+			scope="request" validate="false">
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		
+		<!-- back role -->
+		
+		<action path="/backModifyRolePreAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackModifyRolePreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/background/role_modify.jsp" />
+		</action>
+		<action path="/backModifyRoleAction" parameter="permission=pass" 
+			type="edu.pm.uc.background.action.BackModifyRoleAction"  
+			scope="request" validate="false" 
+			input="/backRoleModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/backTreeAction.do" />
+		</action>
+		
+		
+		
+	</action-mappings>
+</struts-config>

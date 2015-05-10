@@ -1,0 +1,107 @@
+
+
+
+<script language="JavaScript">
+	var mainId;
+	var selectedIds = new Array();
+	var currencys = new Array();
+	var str;
+
+	function setMainId(selectedId){
+		mainId = selectedId;
+	}
+	function getMainId(){
+		return mainId;
+	}
+	function setSelectedIds(selectedId){
+
+		selectedIds[selectedIds.length] = selectedId;
+
+	}
+	function refreshSeledtedIds(arrs){
+	selectedIds.splice(0,selectedIds.length);
+		//selectedIds = arrs;
+	}
+	function getSelectedIds(){
+		return selectedIds;
+	}
+
+	function deleteSelectedId(selectedId){
+	
+		var arr = getSelectedIds();
+
+		var v_location;
+		for(var i=0; i<arr.length; i++){
+
+			if (selectedId == arr[i]){
+
+				v_location = i;
+				break;
+			}
+		}
+
+
+		selectedIds.splice(v_location,1);
+
+	}
+
+	function isContained(selectedId){
+		var arr = getSelectedIds();
+
+		for(var i=0; i<arr.length; i++){
+
+			if (selectedId == arr[i]){
+				return true;
+			}
+			
+		}
+
+		return false;
+	}
+
+	function setStr(htmlStr){
+
+		str = htmlStr;
+
+	}
+
+	function getStr(){
+
+		return str;
+		
+	}
+
+	function setCurrency(currency){
+		currencys[currencys.length] = currency;
+	}
+
+	function getCurrency() {
+		return currencys;
+	}
+
+	function deleteCurrency(currency){
+	
+		var arr = getCurrency();
+
+		var v_location;
+		for(var i=0; i<arr.length; i++){
+
+			if (currency == arr[i]){
+
+				v_location = i;
+				break;
+			}
+		}
+
+
+		currencys.splice(v_location,1);
+
+	}
+
+	function refreshCurrency(){
+		currencys.splice(0,currencys.length);
+	}
+
+
+</script>
+

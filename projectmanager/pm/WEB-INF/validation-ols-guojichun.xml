@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+
+	<global></global>
+
+	<formset>
+	
+	    <!-- battery -->
+		<form name="impCertificateBatteryBasicForm">
+		
+			<field property="certificateBatteryNo" depends="required,maxlength">
+				<arg0 key="Registration No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="applicant" depends="required,maxlength">
+				<arg0 key="Applicant" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+			</field>
+			
+			<field property="applicantAddress" depends="required,maxlength">
+				<arg0 key="Applicant Address" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			
+			<field property="manufacturer" depends="required,maxlength">
+				<arg0 key="Manufacturer" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+			</field>
+			
+			<field property="productDescription" depends="required,maxlength">
+				<arg0 key="Product Name" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="manufacturerAddress" depends="required,maxlength">
+				<arg0 key="Manufacturer Address" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			
+			<field property="brand" depends="required,maxlength">
+				<arg0 key="Brand" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+			</field>
+			
+			<field property="startDate" depends="required,date">
+				<arg0 name="required" key="Start Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+			<field property="expiredDate" depends="required,date">
+				<arg0 name="required" key="Expired Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<form name="impCertificateBatteryDetailForm">
+			
+			<field property="partNo" depends="required,maxlength">
+				<arg0 key="Part No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="productModel" depends="required,maxlength">
+				<arg0 key="Type" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>40</var-value>
+				</var>
+			</field>
+			
+			<field property="voltage" depends="required,maxlength">
+				<arg0 key="Voltage" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="capacity" depends="required,maxlength">
+				<arg0 key="Capacity" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		
+		
+		<!-- o -->
+		<form name="impCertificateOSearchForm">
+			
+			<field property="condition.remainedTimes" depends="integer,intRange">
+				<arg0 key="Times Remained" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="condition.remainedQuantity" depends="integer,intRange">
+				<arg0 key="Quantity Remained" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<form name="impCertificateOBasicForm">
+		
+			<field property="certificateNo" depends="required,maxlength">
+				<arg0 key="Automatic import licence No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="countryOfOrigin" depends="required,maxlength">
+				<arg0 key="Country/Region of origin" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			
+			<field property="remark" depends="maxlength">
+				<arg0 key="Supplementary details" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="issueStamp" depends="maxlength">
+				<arg0 key="Issuing authority's stamp" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="archiveNo" depends="maxlength">
+				<arg0 key="Archive No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="remainedTimes" depends="required,integer,intRange">
+				<arg0 key="Times Remained" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="licenceDate" depends="required,date">
+				<arg0 name="required" key="Licence date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+			<field property="expiredDate" depends="required,date">
+				<arg0 name="required" key="Automatic import licence expiry date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+		</form>
+		
+		<form name="impCertificateODetailForm">
+			
+			<field property="specification" depends="maxlength">
+				<arg0 key="Specification" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>50</var-value>
+				</var>
+			</field>
+			
+			<field property="unit" depends="required,maxlength">
+				<arg0 key="Unit" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="quantity" depends="required,integer,intRange">
+				<arg0 key="Quantity" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="unitPrice" depends="required,float,doubleRange">
+				<arg0 key="Unit Price" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<!-- ccc -->
+		<form name="impCertificateCccBasicForm">
+		
+			<field property="certificateCccno" depends="required,maxlength">
+				<arg0 key="CCC Certificate No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="archiveNo" depends="maxlength">
+				<arg0 key="Archive No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="expiredDate" depends="required,date">
+				<arg0 name="required" key="Expired Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<!-- box -->
+		<form name="expCertificateBoxBasicForm">
+		
+			<field property="certificateBoxNo" depends="required,maxlength">
+				<arg0 key="Packing Certificate No." resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="boxLength" depends="required,integer,intRange">
+				<arg0 key="Length" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="boxWidth" depends="required,integer,intRange">
+				<arg0 key="Width" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="boxHeight" depends="required,integer,intRange">
+				<arg0 key="Height" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="timesAvailable" depends="required,integer,intRange">
+				<arg0 key="Times Available" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="expireDate" depends="required,date">
+				<arg0 name="required" key="Expired Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<!-- imp HK out -->
+		<form name="impHKOutBasicForm">
+		
+			<field property="hkimportDeclarationNo" depends="required,maxlength">
+				<arg0 key="HK Export Declaration ID" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="delayReason" depends="maxlength">
+				<arg0 key="Delay Reason" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationFee" depends="float,doubleRange">
+				<arg0 key="HK Export Declaration Fee" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationPenalty" depends="float,doubleRange">
+				<arg0 key="HK Export Declaration Penalty" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationDate" depends="required,date">
+				<arg0  key="Export Declaration Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<!-- exp HK in -->
+		<form name="expHKInBasicForm">
+		
+			<field property="hkimportDeclarationNo" depends="required,maxlength">
+				<arg0 key="HK Import Declaration ID" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="delayReason" depends="maxlength">
+				<arg0 key="Delay Reason" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationFee" depends="float,doubleRange">
+				<arg0 key="HK Import Declaration Fee" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationPenalty" depends="float,doubleRange">
+				<arg0 key="HK Import Declaration Penalty" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkimportDeclarationDate" depends="required,date">
+				<arg0  key="Import Declaration Date" resource="false" />
+				<msg name="date" key="ExpLCSearchForm.ShipDateFrom" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		
+		<!-- constant -->
+		<form name="pubConstantForm">
+		
+			<field property="constantName" depends="required,maxlength">
+				<arg0 key="Label" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+			
+			<field property="constantValue" depends="required,maxlength">
+				<arg0 key="Value" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="constantOrder" depends="required,integer,intRange">
+				<arg0 key="Order" resource="false" />
+				<arg1 name="intRange" key="${var:min}" resource="false" />
+				<arg2 name="intRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>65535</var-value>
+				</var>
+			</field>
+			
+			<field property="constantDescription" depends="maxlength">
+				<arg0 key="Description" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			
+			<field property="property1" depends="maxlength">
+				<arg0 key="Property1" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="property2" depends="maxlength">
+				<arg0 key="Property2" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="property3" depends="maxlength">
+				<arg0 key="Property3" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+		</form>
+		<!-- exp HK out Begin  rk   -->
+		<form name="expHKOutBasicForm">
+		
+			<field property="hkexportDeclarationId" depends="required,maxlength">
+				<arg0 key="UID NO:" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="blno" depends="maxlength">
+				<arg0 key="B/L NO" resource="false" />
+				<arg1 name="maxlength" key="${var:maxlength}" resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			
+			<field property="hkexportDeclarationFee" depends="float,doubleRange">
+				<arg0 key="HK Export Declaration Fee" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkexportDeclarationPenalty" depends="float,doubleRange">
+				<arg0 key="HK Export Declaration Penalty" resource="false" />
+				<arg1 name="doubleRange" key="${var:min}" resource="false" />
+				<arg2 name="doubleRange" key="${var:max}" resource="false" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>9999999</var-value>
+				</var>
+			</field>
+			
+			<field property="hkexportDeclarationDate" depends="required,date">
+				<arg0  key="HK Emport Declaration Date" resource="false" />
+				<msg name="date" key="BatteryForm.DateFormat" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			
+		</form>
+		<!-- exp HK out end  rk   -->
+	</formset>
+
+
+</form-validation>

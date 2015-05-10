@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	
+	<form-beans>
+	
+		<form-bean name="LoginForm" type="edu.pm.uc.login.form.LoginForm" />
+		
+		<form-bean name="baseSearchForm" type="edu.dlmu.sei.struts.form.BaseSearchForm" />
+		
+		<form-bean name="humanResSearchForm" type="edu.pm.uc.projectlist.form.HumanResSearchForm" />
+		
+		<form-bean name="projectForm" type="edu.pm.uc.projectinfor.form.ProjectForm" />
+		
+		<form-bean name="weekForm" type="edu.pm.uc.weekset.form.WeekForm" />
+		
+		<form-bean name="teamForm" type="edu.pm.uc.teamset.form.TeamForm" />
+		
+		<form-bean name="targetSearchForm" type="edu.pm.uc.targetsearch.form.TargetSearchForm" />
+		
+		<form-bean name="payoutForm" type="edu.pm.uc.payout.form.PayoutForm" />
+		
+		<form-bean name="projectReportForm" type="edu.pm.uc.projectreport.form.ProjectReportForm" />
+		
+		<form-bean name="productSearchForm" type="edu.pm.uc.product.form.ProductSearchForm" />
+		
+		<form-bean name="productForm" type="edu.pm.uc.product.form.ProductForm" />
+		
+		<form-bean name="workloadPicForm" type="edu.pm.uc.workloadpic.form.WorkloadPicForm" />
+		
+		<form-bean name="acceptReportForm" type="edu.pm.uc.acceptreport.form.AcceptReportForm" />
+		
+		<form-bean name="riskForm" type="edu.pm.uc.risk.form.RiskForm" />
+		
+		<form-bean name="problemForm" type="edu.pm.uc.problem.form.ProblemForm" />
+		
+		<form-bean name="targetForm" type="edu.pm.uc.targetperson.form.TargetForm" />
+		
+		<form-bean name="weekReportForm" type="edu.pm.uc.weekreport.form.WeekReportForm" />
+		
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+		<!-- basic -->
+		
+		<action path="/actionOk" parameter="permission=pass" 
+			type="edu.pm.base.ActionOkAction" 
+			scope="request" validate="false" >
+			<forward path="/WEB-INF/jsp/mainpage/ok_forward.jsp" name="success" />
+		</action>
+		
+		<!--login -->
+
+		<action path="/logout" type="edu.pm.base.PMBaseForwardAction" parameter="success" scope="request" input="/login.jsp">
+			<forward path="/" name="success" redirect="true" />
+		</action>
+		<action path="/main1" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/mainpage/main1.jsp" name="success" />
+		</action>
+		<action path="/main2" parameter="success" type="edu.pm.uc.menu.action.Main2Action" scope="request" 
+			input="/projectListAction.do" >
+			<forward path="/WEB-INF/jsp/mainpage/main2.jsp" name="success" />
+		</action>
+		<action path="/logo" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/mainpage/logo.jsp" />
+		</action>
+		<action path="/bar" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/mainpage/bar.jsp" />
+		</action>
+		<action path="/welcome" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/projectInforPreAction.do" />
+		</action>
+		<action path="/validateAction0" parameter="success" type="edu.pm.uc.login.action.ValidateAction0" name="LoginForm" scope="request" validate="false" input="/login.jsp">
+			<forward name="success" path="/main1.do" />
+		</action>
+		<action path="/validateAction" parameter="success" type="edu.pm.uc.login.action.ValidateAction" name="LoginForm" scope="request" validate="false" input="/login.jsp">
+			<forward name="success" path="/main1.do" />
+			<forward name="fail" path="/err403.jsp" />
+		</action>
+
+		<!--project list -->
+		
+		<action path="/projectListAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.ProjectListAction"  
+			scope="request" validate="false" 
+			input="/login.jsp"
+			name="baseSearchForm" >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/project_list.jsp" />
+		</action>
+		<action path="/userListAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.UserListAction"  
+			scope="request" validate="false" 
+			input="/projectListAction.do?reEntry=true"
+			name="baseSearchForm" >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/user_list.jsp" />
+		</action>
+		<action path="/targetListProjectAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.TargetListProjectAction" 
+			scope="request" validate="false" 
+			input="/projectListPreAction.do?reEntry=true">
+			<forward name="success" path="/WEB-INF/jsp/projectlist/target_list.jsp" />
+		</action>
+		<action path="/teamTargetListAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.TeamTargetListAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/team_target_list.jsp" />
+		</action>
+		<action path="/humanResPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.HumanResPreAction"  
+			scope="request" validate="false"  >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/human_res.jsp" />
+		</action>
+		<action path="/humanResSearchAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.HumanResSearchAction"  
+			scope="request" validate="false" name="humanResSearchForm"
+			input="/humanResPreAction.do?reEntry=true" >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/human_res.jsp" />
+		</action>
+		<action path="/workloadStaAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectlist.action.WorkloadStaAction"  
+			scope="request" validate="false"  >
+			<forward name="success" path="/WEB-INF/jsp/projectlist/workload_sta.jsp" />
+		</action>
+		
+		<!-- menu -->
+		
+		<action path="/generateMenuAction" parameter="permission=pass" 
+			type="edu.pm.uc.menu.action.GenerateMenuAction"  
+			scope="request" validate="false" 
+			input="/projectListAction.do?reEntry=true" >
+			<forward name="success" path="/menu/TaskMenu.jsp" />
+		</action>
+		
+		<!-- project infor -->
+		
+		<action path="/projectInforPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectinfor.action.ProjectInforPreAction"  
+			scope="request" validate="false" name="projectForm" >
+			<forward name="success" path="/WEB-INF/jsp/projectinfor/project_infor.jsp" />
+		</action>
+		<action path="/projectInforUpdateAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectinfor.action.ProjectInforUpdateAction"  
+			scope="request" validate="false" name="projectForm"
+			input="/projectInforPreAction.do?reEntry=true" >
+			<forward name="success" path="/actionOk.do?url=projectInforPreAction.do" />
+		</action>
+		
+		<!-- week set -->
+		
+		<action path="/weekListAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekListAction" name="baseSearchForm" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/weekset/week_list.jsp" />
+		</action>
+		<action path="/weekCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekCreateAction"  name="weekForm"
+			scope="request" validate="false" input="/weekListAction.do?reEntry=true" >
+			<forward name="success" path="/weekListAction.do" />
+		</action>
+		<action path="/weekModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekModifyPreAction"  name="weekForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/weekset/week_modify.jsp" />
+		</action>
+		<action path="/weekModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekModifyAction"  name="weekForm"
+			scope="request" validate="false" input="/weekModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/weekListAction.do" />
+		</action>
+		<action path="/weekDefaultPreAction" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/weekset/week_default.jsp" name="success" />
+		</action>
+		<action path="/weekDefaultAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekDefaultAction"  name="weekForm"
+			scope="request" validate="false" input="/weekDefaultPreAction.do?reEntry=true" >
+			<forward name="success" path="/weekListAction.do" />
+		</action>
+		<action path="/weekDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekset.action.WeekDeleteAction"  
+			scope="request" >
+			<forward name="success" path="/weekListAction.do" />
+		</action>
+		
+		<!-- team set -->
+		
+		<action path="/teamModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.teamset.action.TeamModifyPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/teamset/team_modify.jsp" />
+		</action>
+		<action path="/teamModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.teamset.action.TeamModifyAction"  name="teamForm"
+			scope="request" validate="false" input="/teamModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/actionOk.do?url=teamModifyPreAction.do" />
+		</action>
+		
+		<!-- gantt -->
+		
+		<action path="/gantt" parameter="permission=pass" type="edu.pm.base.PMBaseForwardAction" scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/gantt/gantt.jsp" />
+		</action>
+		<action path="/ganttTargetAction" parameter="permission=pass" 
+			type="edu.pm.uc.gantt.action.GanttTargetAction" 
+			scope="request" validate="false"  >
+		</action>
+		<action path="/targetCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.gantt.action.TargetCreateAction" 
+			scope="request" validate="false"  >
+		</action>
+		<action path="/targetDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.gantt.action.TargetDeleteAction" 
+			scope="request" validate="false"  >
+		</action>
+		<action path="/targetModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.gantt.action.TargetModifyAction" 
+			scope="request" validate="false"  >
+		</action>
+		
+		<!-- target search -->
+		
+		<action path="/targetSearchPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetsearch.action.TargetSearchPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/targetsearch/target_search.jsp" />
+		</action>
+		<action path="/targetSearchAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetsearch.action.TargetSearchAction"  name="targetSearchForm"
+			scope="request" validate="false" input="/targetSearchPreAction.do?reEntry=true" >
+			<forward name="success" path="/targetSearchPreAction.do" />
+		</action>
+		
+		<action path="/targetSearchDetailAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetsearch.action.TargetSearchDetailAction"
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/targetsearch/target_detail.jsp" />
+		</action>
+		
+		<!-- payout -->
+		
+		<action path="/payoutListAction" parameter="permission=pass" 
+			type="edu.pm.uc.payout.action.PayoutListAction" name="baseSearchForm" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/payout/payout_list.jsp" />
+		</action>
+		<action path="/payoutCreatePreAction" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/payout/payout_create.jsp" name="success" />
+		</action>
+		<action path="/payoutCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.payout.action.PayoutCreateAction"  name="payoutForm"
+			scope="request" validate="false" input="/payoutCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/payoutListAction.do" />
+		</action>
+		<action path="/payoutModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.payout.action.PayoutModifyPreAction"  name="payoutForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/payout/payout_modify.jsp" />
+		</action>
+		<action path="/payoutModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.payout.action.PayoutModifyAction"  name="payoutForm"
+			scope="request" validate="false" input="/payoutModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/payoutListAction.do" />
+		</action>
+		<action path="/payoutDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.payout.action.PayoutDeleteAction"  
+			scope="request" >
+			<forward name="success" path="/payoutListAction.do" />
+		</action>
+		
+		<!-- project report -->
+		
+		<action path="/projectReportListAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectreport.action.ProjectReportListAction" name="baseSearchForm" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/projectreport/projectreport_list.jsp" />
+		</action>
+		<action path="/projectReportSearchDetailAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectreport.action.ProjectReportSearchDetailAction"
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/projectreport/projectreport_detail.jsp" />
+		</action>
+		<action path="/projectReportCreatePreAction" parameter="success" type="edu.pm.base.PMBaseForwardAction" scope="request">
+			<forward path="/WEB-INF/jsp/projectreport/projectreport_create.jsp" name="success" />
+		</action>
+		<action path="/projectReportCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectreport.action.ProjectReportCreateAction"  name="projectReportForm"
+			scope="request" validate="false" input="/projectReportCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/projectReportListAction.do" />
+		</action>
+		
+		<!-- product -->
+		
+		<action path="/productSearchPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.product.action.ProductSearchPreAction"  
+			scope="request" validate="false"  >
+			<forward name="success" path="/WEB-INF/jsp/product/product_search.jsp" />
+		</action>
+		<action path="/productSearchAction" parameter="permission=pass" 
+			type="edu.pm.uc.product.action.ProductSearchAction"  
+			scope="request" validate="false" name="productSearchForm"
+			input="/productSearchPreAction.do?reEntry=true" >
+			<forward name="success" path="/productSearchPreAction.do" />
+		</action>
+		<action path="/productAuditPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.product.action.ProductAuditPreAction"  name="productForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/product/product_audit.jsp" />
+		</action>
+		<action path="/productAuditAction" parameter="permission=pass" 
+			type="edu.pm.uc.product.action.ProductAuditAction"  name="productForm"
+			scope="request" validate="false" input="/productAuditPreAction.do?reEntry=true" >
+			<forward name="success" path="/productSearchAction.do" />
+		</action>
+		
+		<!-- workload pic -->
+		
+		<action path="/workloadPicPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.workloadpic.action.WorkloadPicPreAction"  
+			scope="request" validate="false"  >
+			<forward name="success" path="/WEB-INF/jsp/workloadpic/workload_pic.jsp" />
+		</action>
+		<action path="/workloadPicAction" parameter="permission=pass" 
+			type="edu.pm.uc.workloadpic.action.WorkloadPicAction"  
+			scope="request" validate="false" name="workloadPicForm"
+			input="/workloadPicPreAction.do?reEntry=true" >
+			<forward name="success" path="/workloadPicPreAction.do" />
+		</action>
+		
+		<!-- accept report -->
+		
+		<action path="/acceptReportCreatePreAction" parameter="permission=pass" 
+			type="edu.pm.uc.acceptreport.action.AcceptReportCreatePreAction"  
+			scope="request" validate="false"  name="acceptReportForm" >
+			<forward name="success" path="/WEB-INF/jsp/acceptreport/acceptreport_create.jsp" />
+		</action>
+		<action path="/acceptReportCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.acceptreport.action.AcceptReportCreateAction"  
+			scope="request" validate="false" name="acceptReportForm"
+			input="/acceptReportCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/actionOk.do?url=acceptReportCreatePreAction.do" />
+		</action>
+		
+		<!-- risk -->
+		
+		<action path="/riskListAction" parameter="permission=pass" 
+			type="edu.pm.uc.risk.action.RiskListAction" name="baseSearchForm" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/risk/risk_list.jsp" />
+		</action>
+		<action path="/riskCreatePreAction" parameter="success" 
+			type="edu.pm.uc.risk.action.RiskCreatePreAction" scope="request">
+			<forward path="/WEB-INF/jsp/risk/risk_create.jsp" name="success" />
+		</action>
+		<action path="/riskCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.risk.action.RiskCreateAction"  name="riskForm"
+			scope="request" validate="false" input="/riskCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/riskListAction.do" />
+		</action>
+		<action path="/riskModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.risk.action.RiskModifyPreAction"  name="riskForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/risk/risk_modify.jsp" />
+		</action>
+		<action path="/riskModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.risk.action.RiskModifyAction"  name="riskForm"
+			scope="request" validate="false" input="/riskModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/riskListAction.do" />
+		</action>
+		<action path="/riskDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.risk.action.RiskDeleteAction"  
+			scope="request" >
+			<forward name="success" path="/riskListAction.do" />
+		</action>
+		
+		<!-- problem -->
+		
+		<action path="/problemListAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemListAction" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/problem/problem_list.jsp" />
+		</action>
+		<action path="/problemCreatePreAction" parameter="success" 
+			type="edu.pm.uc.problem.action.ProblemCreatePreAction" scope="request">
+			<forward path="/WEB-INF/jsp/problem/problem_create.jsp" name="success" />
+		</action>
+		<action path="/problemCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemCreateAction"  name="problemForm"
+			scope="request" validate="false" input="/problemCreatePreAction.do?reEntry=true" >
+			<forward name="success" path="/problemListAction.do" />
+		</action>
+		<action path="/problemModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemModifyPreAction"  name="problemForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/problem/problem_modify.jsp" />
+		</action>
+		<action path="/problemModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemModifyAction"  name="problemForm"
+			scope="request" validate="false" input="/problemModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/problemListAction.do" />
+		</action>
+		<action path="/problemDeleteAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemDeleteAction"  
+			scope="request" >
+			<forward name="success" path="/problemListAction.do" />
+		</action>
+		<action path="/problemSumAction" parameter="permission=pass" 
+			type="edu.pm.uc.problem.action.ProblemSumAction"  
+			scope="request" >
+			<forward name="success" path="/problemListAction.do" />
+		</action>
+		
+		<!-- target person -->
+		
+		<action path="/targetPersonPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetperson.action.TargetPersonPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/targetperson/target_person.jsp" />
+		</action>
+		<action path="/targetPersonAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetperson.action.TargetPersonAction"  name="targetSearchForm"
+			scope="request" validate="false" input="/targetPersonPreAction.do?reEntry=true" >
+			<forward name="success" path="/targetPersonPreAction.do" />
+		</action>
+		<action path="/targetPersonModifyPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetperson.action.TargetPersonModifyPreAction"  name="targetForm"
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/targetperson/targetperson_modify.jsp" />
+		</action>
+		<action path="/targetPersonModifyAction" parameter="permission=pass" 
+			type="edu.pm.uc.targetperson.action.TargetPersonModifyAction"  name="targetForm"
+			scope="request" validate="false" input="/targetPersonModifyPreAction.do?reEntry=true" >
+			<forward name="success" path="/targetPersonPreAction.do" />
+		</action>
+		
+		<!-- week report -->
+		
+		<action path="/targetListPreAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekreport.action.TargetListPreAction"  
+			scope="request" validate="false" >
+			<forward name="success" path="/WEB-INF/jsp/weekreport/target_list.jsp" />
+		</action>
+		<action path="/targetListAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekreport.action.TargetListAction" name="workloadPicForm"
+			scope="request" validate="false" input="/targetListPreAction.do?reEntry=true" >
+			<forward name="success" path="/targetListPreAction.do" />
+		</action>
+		<action path="/weekReportDetailAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekreport.action.WeekReportDetailAction" name="weekReportForm"
+			scope="request" validate="false">
+			<forward name="bean" path="/WEB-INF/jsp/weekreport/weekreport_bean.jsp" />
+			<forward name="form" path="/WEB-INF/jsp/weekreport/weekreport_form.jsp" />
+		</action>
+		<action path="/weekReportCreateAction" parameter="permission=pass" 
+			type="edu.pm.uc.weekreport.action.WeekReportCreateAction"  name="weekReportForm"
+			scope="request" validate="false" input="/targetListPreAction.do?reEntry=true" >
+			<forward name="success" path="/targetListPreAction.do" />
+		</action>
+		
+		<!-- accept report view -->
+		
+		<action path="/acceptReportViewAction" parameter="permission=pass" 
+			type="edu.pm.uc.acceptreportview.action.AcceptReportViewAction"  
+			scope="request" validate="false"  >
+			<forward name="success" path="/WEB-INF/jsp/acceptreportview/acceptreport_view.jsp" />
+			<forward name="fail" path="/WEB-INF/jsp/acceptreportview/acceptreport_fail.jsp" />
+		</action>
+		
+			<!-- project report view -->
+		
+		<action path="/projectReportViewListAction" parameter="permission=pass" 
+			type="edu.pm.uc.projectreportview.action.ProjectReportViewListAction" name="baseSearchForm" 
+			scope="request" validate="false">
+			<forward name="success" path="/WEB-INF/jsp/projectreportview/projectreportview_list.jsp" />
+		</action>
+		
+		
+	</action-mappings>
+</struts-config>

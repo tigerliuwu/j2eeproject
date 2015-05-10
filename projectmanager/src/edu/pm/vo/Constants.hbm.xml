@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Nov 27 23:57:41 CST 2006                         -->
+<hibernate-mapping package="edu.pm.vo">
+
+    <class name="Constants" table="constants">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="increment"/>
+        </id>
+ 
+        <property name="constantType" column="constant_type" type="java.lang.String" />
+        <property name="constantLabel" column="constant_label" type="java.lang.String" />
+        <property name="constantValue" column="constant_value" type="java.lang.String" />
+        <property name="constantOrder" column="constant_order" type="java.lang.Integer" />
+        <property name="property1" column="property1" type="java.lang.String" />
+        <property name="property2" column="property2" type="java.lang.String" />
+        <property name="property3" column="property3" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>
